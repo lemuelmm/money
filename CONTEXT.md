@@ -22,12 +22,28 @@ Fora do escopo inicial (entram quando tiver 1-2 meses de histórico ou quando fi
 
 ## Contas monitoradas
 
-- **Nubank conta corrente** — fonte da verdade, uso diário
-- **Nubank cartão** — exporta fatura em CSV (único canal automatizável hoje)
-- **Santander conta corrente** — recebe salário, paga contas fixas (baixo volume)
-- **Mercado Pago** — baixo volume
+Saldos iniciais em `contas.md`. Agrupadas por papel:
 
-Cartão de crédito é tratado como **conta separada** com saldo geralmente negativo (= dívida). Pagamento da fatura é modelado como transferência da conta corrente pro cartão. Isso evita contar a mesma despesa duas vezes (na compra e no pagamento).
+**Conta corrente / liquidez**
+- **Nubank CC** — fonte da verdade, uso diário
+- **Bradesco** — recebe salário, paga contas fixas (baixo volume)
+- **Mercado Pago** — conta (baixo volume)
+
+**Cartões de crédito** (saldo geralmente negativo = fatura em aberto)
+- **Nubank Cartão** — exporta fatura em CSV (único canal automatizável hoje)
+- **Mercado Pago Cartão**
+- **Cartão Amazon** — final 1017
+
+**Empréstimos** (saldo negativo = dívida em aberto)
+- **Nubank Empréstimo 1**
+- **Nubank Empréstimo 2**
+- **Naassom** — dívida pessoal
+
+**Investimentos** (saldo positivo, atualização periódica manual)
+- **Nubank Renda Fixa**
+- **Nubank Bolsa**
+
+Cartões de crédito e empréstimos são tratados como **contas separadas** com saldo negativo. Pagamento da fatura/parcela é modelado como transferência da conta corrente pra conta da dívida, aproximando o saldo de zero. Isso evita contar a mesma despesa duas vezes (na compra e no pagamento).
 
 ## O que é um bom resultado
 

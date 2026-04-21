@@ -6,11 +6,11 @@ A interação é sempre via Claude: você cola CSV, texto do extrato ou descreve
 
 ## Setup inicial (uma vez)
 
-1. Preencher `contas.md` com os **saldos iniciais** no dia de hoje:
-   - `Nubank CC` — saldo da conta corrente
-   - `Nubank Cartão` — **negativo** do valor da fatura em aberto (dívida)
-   - `Santander` — saldo da conta corrente
-   - `Mercado Pago` — saldo disponível
+1. Preencher `contas.md` com os **saldos iniciais** no dia de hoje, agrupados por papel:
+   - **Liquidez**: `Nubank CC`, `Bradesco`, `Mercado Pago` (saldos positivos)
+   - **Cartões**: `Nubank Cartão`, `Mercado Pago Cartão`, `Cartão Amazon` (**negativos** = fatura em aberto)
+   - **Empréstimos**: `Nubank Empréstimo 1`, `Nubank Empréstimo 2`, `Naassom` (**negativos** = dívida em aberto)
+   - **Investimentos**: `Nubank Renda Fixa`, `Nubank Bolsa` (saldos positivos, atualização periódica)
 2. Deixar `transacoes.md` vazia (só o cabeçalho da tabela)
 
 A partir daqui, todas as transações novas (posteriores à `Data Inicial` de cada conta) passam a ser registradas.
@@ -41,9 +41,11 @@ Em dúvida, deixar `Outros` e seguir. Não trava o fluxo.
 
 Descrever pro Claude adicionar em `transacoes.md`:
 
-- **Salário** no Santander (`Tipo = Receita`, `Categoria = Salário`)
-- **Contas fixas** pagas pelo Santander: água, luz, internet, aluguel — cada uma como `Despesa` na categoria certa
-- **Transações do Mercado Pago** do mês
+- **Salário** no Bradesco (`Tipo = Receita`, `Categoria = Salário`)
+- **Contas fixas** pagas pelo Bradesco: água, luz, internet, aluguel — cada uma como `Despesa` na categoria certa
+- **Faturas de cartões não-Nubank** (Mercado Pago Cartão, Cartão Amazon): se não der pra exportar CSV, descrever manualmente ou colar o texto da fatura — Claude estrutura
+- **Parcelas de empréstimo** pagas no mês: transferência da conta pagadora → conta do empréstimo (aproxima o saldo de zero)
+- **Transações do Mercado Pago** (conta) do mês
 - **Transações da Nubank CC** que não sejam cartão (Pix, débito, transferência)
 
 Se tiver extrato em CSV/PDF/texto, pode colar direto — o Claude estrutura.

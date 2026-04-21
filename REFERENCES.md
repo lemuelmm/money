@@ -23,6 +23,13 @@ Referência de como uma planilha bem estruturada pode resolver muito sem precisa
 - Sem dependências externas desnecessárias (APIs bancárias, serviços pagos)
 - Deve ser possível exportar os dados — sem lock-in
 
+## Decisões estruturais
+
+- **Cartão de crédito é conta separada**, não uma categoria de gasto. Saldo costuma ficar negativo (dívida). Pagamento da fatura é uma transferência da conta corrente pro cartão. Padrão de YNAB/Copilot. Evita contar a mesma despesa duas vezes (na compra e no pagamento)
+- **Santander e Mercado Pago ficam com entrada manual** enquanto o volume for baixo. Não vale investir agora em explorar CSV/OFX deles — reavaliar se o volume crescer
+- **Nubank é o único canal automatizado hoje**, via CSV da fatura do cartão
+- **Transferências entre contas próprias não são despesa nem receita** — são um `Tipo` dedicado, com duas linhas (saída de uma conta, entrada na outra)
+
 ## Notas
 
 O ponto de partida mais simples que resolve o problema real é a escolha certa. Escalar depois, se precisar.

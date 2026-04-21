@@ -4,7 +4,7 @@
 
 Uma solução pessoal para gerenciar finanças — começando simples e evoluindo conforme a necessidade.
 
-O objetivo é ter clareza sobre onde o dinheiro vai: o que entra, o que sai, quanto sobra, e se estou no caminho certo para os meus objetivos. A solução pode começar como uma planilha bem estruturada e migrar para um app se fizer sentido.
+O objetivo é ter clareza sobre onde o dinheiro vai: o que entra, o que sai, quanto sobra, e se estou no caminho certo para os meus objetivos. A solução começa como arquivos markdown no repositório (lidos/editados pelo Claude) e pode migrar para um app se fizer sentido.
 
 ## Funcionalidades principais
 
@@ -45,19 +45,19 @@ Cartão de crédito é tratado como **conta separada** com saldo geralmente nega
 
 ## Arquitetura por fase
 
-### Fase 1 — Planilha estruturada
-Testar a hipótese sem escrever código. Google Sheets com abas:
-- **Transações** — data, descrição, categoria, valor, conta, tipo (receita/despesa/transferência)
-- **Contas** — saldo atual por conta
-- **Categorias** — lista usada pra validação de dados em `Transações`
-- **Dashboard** — visão consolidada: saldo por conta, receitas/despesas do mês, gasto por categoria
+### Fase 1 — Arquivos markdown
+Testar a hipótese sem escrever código e sem depender de Sheets/Excel (conectar planilha ao Claude no iPad estava inviável). Dois arquivos de dados na raiz:
+- **`transacoes.md`** — tabela corrida com data, descrição, categoria, valor, conta, tipo (receita/despesa/transferência)
+- **`contas.md`** — saldo inicial e data de referência por conta
 
-Detalhes da estrutura e do workflow estão em `planilha/`.
+Categorias em `docs/CATEGORIAS.md`. Visão consolidada (saldo por conta, receitas/despesas do mês, gasto por categoria) é calculada **sob demanda** pelo Claude a partir dos dois arquivos — não existe arquivo de dashboard fixo.
+
+Detalhes da estrutura e do workflow estão em `docs/`.
 
 ### Fase 1.5 — Orçamento e metas
-Depois de 1-2 meses de dados confiáveis, adicionar abas de **Orçamento** (limite por categoria vs. realizado) e **Metas** (objetivo, prazo, progresso).
+Depois de 1-2 meses de dados confiáveis, adicionar **Orçamento** (limite por categoria vs. realizado) e **Metas** (objetivo, prazo, progresso) como novos arquivos markdown.
 
-### Fase 2 — Web app simples (se a planilha validar o conceito)
+### Fase 2 — Web app simples (se os markdowns validarem o conceito)
 - Next.js com Tailwind, deploy na Vercel
 - Dados em JSON ou SQLite — sem banco externo
-- Import/export CSV para migrar da planilha
+- Import dos `.md` existentes para migrar

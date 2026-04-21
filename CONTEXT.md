@@ -8,12 +8,26 @@ O objetivo é ter clareza sobre onde o dinheiro vai: o que entra, o que sai, qua
 
 ## Funcionalidades principais
 
+Escopo inicial (Fase 1):
+
 - **Registro de transações** — receitas e despesas com data, categoria, conta e descrição
 - **Histórico de gastos** — acompanhar o padrão ao longo do tempo
-- **Orçamento por categoria** — definir limites e comparar com o realizado
-- **Metas financeiras** — acompanhar progresso em relação a objetivos
 - **Saldo por conta** — visão do que tenho disponível em cada conta agora
 - **Visão consolidada** — resumo geral de despesas e situação financeira
+
+Fora do escopo inicial (entram quando tiver 1-2 meses de histórico ou quando fizer falta):
+
+- **Orçamento por categoria** — definir limites e comparar com o realizado
+- **Metas financeiras** — acompanhar progresso em relação a objetivos
+
+## Contas monitoradas
+
+- **Nubank conta corrente** — fonte da verdade, uso diário
+- **Nubank cartão** — exporta fatura em CSV (único canal automatizável hoje)
+- **Santander conta corrente** — recebe salário, paga contas fixas (baixo volume)
+- **Mercado Pago** — baixo volume
+
+Cartão de crédito é tratado como **conta separada** com saldo geralmente negativo (= dívida). Pagamento da fatura é modelado como transferência da conta corrente pro cartão. Isso evita contar a mesma despesa duas vezes (na compra e no pagamento).
 
 ## O que é um bom resultado
 
@@ -33,10 +47,15 @@ O objetivo é ter clareza sobre onde o dinheiro vai: o que entra, o que sai, qua
 
 ### Fase 1 — Planilha estruturada
 Testar a hipótese sem escrever código. Google Sheets com abas:
-- **Transações** — data, descrição, categoria, valor, conta, tipo (receita/despesa)
-- **Orçamento** — limite por categoria vs. realizado no mês
+- **Transações** — data, descrição, categoria, valor, conta, tipo (receita/despesa/transferência)
 - **Contas** — saldo atual por conta
-- **Metas** — objetivo, prazo, progresso atual
+- **Categorias** — lista usada pra validação de dados em `Transações`
+- **Dashboard** — visão consolidada: saldo por conta, receitas/despesas do mês, gasto por categoria
+
+Detalhes da estrutura e do workflow estão em `planilha/`.
+
+### Fase 1.5 — Orçamento e metas
+Depois de 1-2 meses de dados confiáveis, adicionar abas de **Orçamento** (limite por categoria vs. realizado) e **Metas** (objetivo, prazo, progresso).
 
 ### Fase 2 — Web app simples (se a planilha validar o conceito)
 - Next.js com Tailwind, deploy na Vercel

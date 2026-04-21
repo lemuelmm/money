@@ -1,6 +1,6 @@
 # Categorias
 
-Lista inicial de categorias pra usar na aba `Transações`. É um ponto de partida — ajustar conforme o padrão real de gastos aparecer nos primeiros 1-2 meses.
+Lista inicial de categorias pra usar na coluna `Categoria` de `transacoes.md`. É um ponto de partida — ajustar conforme o padrão real de gastos aparecer nos primeiros 1-2 meses.
 
 ## Princípios
 
@@ -29,11 +29,11 @@ Lista inicial de categorias pra usar na aba `Transações`. É um ponto de parti
 
 ## Transferências
 
-Transferências entre contas próprias **não precisam de categoria** (o `Tipo = Transferência` já identifica). Se a validação de dados da coluna `Categoria` exigir algo, usar `Transferência` como categoria especial.
+Transferências entre contas próprias não são despesa nem receita (o `Tipo = Transferência` já identifica). Usar `Transferência` como valor da coluna `Categoria` pra manter a tabela consistente.
 
 ## Como evoluir
 
-Depois do 1º mês, olhar o `Dashboard` e perguntar:
+Depois do 1º mês, pedir ao Claude um resumo por categoria e perguntar:
 
 - Tem categoria com gasto muito grande e heterogêneo? Pode valer quebrar (ex: `Alimentação` em `Supermercado` e `Fora de casa`)
 - Tem categoria que quase nunca é usada? Juntar com `Outros`

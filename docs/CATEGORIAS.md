@@ -13,12 +13,13 @@ Lista inicial de categorias pra usar na coluna `Categoria` de `transacoes.md`. �
 - **Moradia** — aluguel, condomínio, IPTU
 - **Contas da casa** — água, luz, internet, gás
 - **Alimentação** — supermercado, restaurante, delivery, café
-- **Transporte** — combustível, Uber/99, transporte público, estacionamento
-- **Saúde** — plano, farmácia, consultas, exames
-- **Assinaturas** — streaming, apps, software
+- **Transporte** — combustível, Uber/99, transporte público, estacionamento, IPVA, multas
+- **Saúde** — plano, farmácia, consultas, exames, medicina natural
+- **Assinaturas** — streaming, apps, software, recarga celular
 - **Lazer** — eventos, passeios, viagens, hobbies
-- **Compras pessoais** — roupa, eletrônico, presentes
+- **Compras pessoais** — roupa, eletrônico, presentes, prestações de compras
 - **Educação** — cursos, livros
+- **Empréstimo** — parcelas de empréstimo, financiamento, dívidas pessoais
 - **Outros** — o que não encaixar (tentar manter esse balde pequeno)
 
 ## Receitas

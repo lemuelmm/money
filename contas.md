@@ -7,7 +7,7 @@ Saldo atual de cada conta é calculado sob demanda pelo Claude:
 
 | Nome          | Saldo Inicial | Data Inicial |
 |---------------|---------------|--------------|
-| Nubank CC     |               | 2026-04-21   |
-| Nubank Cartão |               | 2026-04-21   |
+| Nubank CC     | _(preencher)_ | 2026-01-01   |
+| Nubank Cartão | -3.082,68     | 2026-01-01   |
 | Santander     |               | 2026-04-21   |
 | Mercado Pago  |               | 2026-04-21   |
